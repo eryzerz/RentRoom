@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Discover</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3">
+        <app-place-item 
+          *ngFor="let place of loadedPlace" 
+          [placeItem]="place"
+        >
+        </app-place-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

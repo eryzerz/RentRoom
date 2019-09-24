@@ -1,0 +1,11 @@
+<ion-list>
+  <ion-item [routerLink]="['/', 'places', 'tabs', 'offers', item.id]" detail="true">
+    <ion-avatar slot="start">
+      <img [src]="item.imageUrl" />
+    </ion-avatar>
+    <ion-label>{{item.title}}</ion-label>
+  </ion-item>
+</ion-list>
+
+
+    
