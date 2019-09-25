@@ -1,10 +1,15 @@
 <ion-list>
-  <ion-item [routerLink]="['/', 'places', 'tabs', 'offers', item.id]" detail="true">
-    <ion-avatar slot="start">
-      <img [src]="item.imageUrl" />
-    </ion-avatar>
-    <ion-label>{{item.title}}</ion-label>
-  </ion-item>
+  <ion-item-sliding #itemCtrl>
+    <ion-item [routerLink]="['/', 'places', 'tabs', 'offers', item.id]" detail="true">
+      <ion-avatar slot="start">
+        <img [src]="item.imageUrl" />
+      </ion-avatar>
+      <ion-label>{{item.title}}</ion-label>
+    </ion-item>
+    <ion-item-options side="end">
+      <ion-item-option color="primary" (click)="onEdit(item.id, itemCtrl)">Edit</ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
 </ion-list>
 
 

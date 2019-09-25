@@ -1,7 +1,7 @@
 <ion-card [routerLink]="['/', 'places', 'tabs','discover', placeItem.id]">
     <img [src]="placeItem.imageUrl" />
     <ion-card-header>
-      <ion-card-subtitle>{{placeItem.price | currency}}</ion-card-subtitle>
+      <ion-card-subtitle>{{placeItem.price | currency}} / night</ion-card-subtitle>
       <ion-card-title>{{placeItem.title}}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
