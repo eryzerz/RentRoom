@@ -8,9 +8,17 @@ import { Place } from '../../place.model';
 })
 export class PlaceItemComponent implements OnInit {
   @Input() placeItem: Place
+  data = true
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.data = false
+    setTimeout(() => {
+      this.data = true
+    }, 2000);
+  }
 
+  ionViewWillEnter() {
+  }
 }

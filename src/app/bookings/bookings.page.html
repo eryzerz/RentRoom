@@ -8,5 +8,10 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-list *ngFor="let booking of loadedBookings">
+    <ion-item>
+      <ion-label>{{ booking.placeTitle }}</ion-label>
+      <ion-label>{{ booking.guestNumber }}</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

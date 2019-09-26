@@ -11,6 +11,14 @@
   <ion-grid fixed>
     <ion-row>
       <ion-col size="12" size-sm="8" offset-sm="2" text-center>
+          <ion-segment>
+              <ion-segment-button checked>
+                <ion-label>All Places</ion-label>
+              </ion-segment-button>
+              <ion-segment-button>
+                <ion-label>Booking Places</ion-label>
+              </ion-segment-button>
+            </ion-segment>
         <app-place-item 
           *ngFor="let place of loadedPlace" 
           [placeItem]="place"

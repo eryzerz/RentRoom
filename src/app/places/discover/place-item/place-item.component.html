@@ -1,10 +1,26 @@
-<ion-card [routerLink]="['/', 'places', 'tabs','discover', placeItem.id]">
-    <img [src]="placeItem.imageUrl" />
-    <ion-card-header>
-      <ion-card-subtitle>{{placeItem.price | currency}} / night</ion-card-subtitle>
-      <ion-card-title>{{placeItem.title}}</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      {{placeItem.description}}
-    </ion-card-content>
-</ion-card>
+<div *ngIf="data">
+  <ion-card [routerLink]="['/', 'places', 'tabs','discover', placeItem.id]">
+      <img [src]="placeItem.imageUrl" />
+      <ion-card-header>
+        <ion-card-subtitle>{{placeItem.price | currency}} / night</ion-card-subtitle>
+        <ion-card-title>{{placeItem.title}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{placeItem.description}}
+      </ion-card-content>
+  </ion-card>
+</div>
+
+<div *ngIf="!data">
+    <ion-card>
+        <ion-skeleton-text animated padding-vertical padding></ion-skeleton-text>
+        <ion-card-header text-center>
+          <ion-card-subtitle><ion-skeleton-text width="30%" animated></ion-skeleton-text></ion-card-subtitle>
+          <ion-card-title><ion-skeleton-text width="70%" animated></ion-skeleton-text></ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-skeleton-text width="65%" animated></ion-skeleton-text>
+        </ion-card-content>
+    </ion-card>
+  </div>
+

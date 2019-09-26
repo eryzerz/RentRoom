@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
   private _isAuthenticated = false
+  loading = false
 
   get isAuthenticated() {
     return this._isAuthenticated
@@ -14,8 +15,13 @@ export class AuthService {
   constructor(private router: Router) { }
 
   login() {
-    this._isAuthenticated = true
-    this.router.navigate(['/places/tabs/discover'])
+    this.loading = true
+    setTimeout(() => {
+      this.loading = false
+      this._isAuthenticated = true
+      this.router.navigate(['/places/tabs/discover'])
+    }, 2000)
+    
   }
 
   logout() {
